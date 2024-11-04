@@ -237,16 +237,18 @@ main {
 main .projects {
   grid-area: projects;
 }
+main .project-item, main .announcements-container, main .trending-container {
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(100, 100, 100, 0.5);
+}
 main .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1em;
 }
 main .projects-container .project-item {
-  box-shadow: 5px 5px 5px rgba(100, 100, 100, 0.5);
-  padding: 2em;
-  background-color: #fff;
-  border-radius: 10px;
   border-left: 0.6em solid #e2c524;
   display: grid;
   gap: 1em;
@@ -286,12 +288,6 @@ main section .title {
 main .announcements {
   grid-area: announcements;
 }
-main .announcements-container {
-  background-color: white;
-  border-radius: 10px;
-  padding: 2em;
-  box-shadow: 5px 5px 5px rgba(100, 100, 100, 0.5);
-}
 main .announcements-list li.announcement-item {
   padding: 1em 0;
 }
@@ -300,4 +296,24 @@ main .announcements-list li.announcement-item + li.announcement-item {
 }
 main .announcements-list .announcement-title {
   margin-bottom: 0.4em;
+}
+main .trending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+main .trending-list .trending-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 2em;
+}
+main .trending-list .trending-item .profile-pic svg {
+  border-radius: 50%;
+}
+main .trending-list .trending-item .details {
+  font-size: 1.2rem;
+}
+main .trending-list .trending-item .details .project {
+  color: #515151;
 }
