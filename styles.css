@@ -49,7 +49,7 @@ header .search {
   gap: 1em;
 }
 header .search .search-icon {
-  fill: #444;
+  fill: #666;
   cursor: pointer;
   width: var(--icon-size);
   height: var(--icon-size);
@@ -67,7 +67,7 @@ header .search input[type=search] {
 }
 header .search input[type=search]:focus {
   background-color: #e1e1e1;
-  box-shadow: 2px 2px 5px gray;
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
 }
 header .search input[type=search]:hover {
   background-color: #e1e1e1;
@@ -82,7 +82,7 @@ header .profile {
 header .profile .notifications {
   width: var(--icon-size);
   height: var(--icon-size);
-  fill: #444;
+  fill: #666;
   cursor: pointer;
 }
 header .profile .notifications:hover {
@@ -282,7 +282,7 @@ main .projects-container .project-actions .action-icon {
   fill: #515151;
   width: 2rem;
   height: 2rem;
-  fill: #444;
+  fill: #666;
   cursor: pointer;
 }
 main .projects-container .project-actions .action-icon:hover {
