@@ -3,3 +3,28 @@
   margin: 0;
   padding: 0;
 }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: "sidebar header" "sidebar main";
+  background-color: #c8c8c8;
+}
+
+header {
+  grid-area: header;
+  background-color: #f8f8f8;
+}
+
+aside {
+  grid-area: sidebar;
+  background-color: rgb(21, 181, 245);
+}
+
+main {
+  grid-area: main;
+}
