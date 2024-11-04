@@ -30,34 +30,52 @@ header {
 }
 
 aside {
+  --nav-color: #f4f4f4;
+  --icon-gap: 0.5em;
   grid-area: sidebar;
-  background-color: #15a6df;
-  color: white;
+  background-color: #149fd6;
+  color: var(--nav-color);
   padding: 1em;
   display: flex;
   flex-direction: column;
   gap: 3em;
 }
+aside svg {
+  fill: var(--nav-color);
+}
 aside .title {
   font-size: 1.5rem;
   display: flex;
-  gap: 0.3em;
+  gap: var(--icon-gap);
   align-items: center;
 }
 aside .title svg {
   width: 2.5em;
   height: 2.5em;
   flex: 1;
+  fill: white;
 }
 aside .title .title-text {
+  color: white;
   flex: 4;
 }
 aside ul li {
   font-weight: bold;
   font-size: 1.5rem;
   display: flex;
-  gap: 0.3em;
+  gap: var(--icon-gap);
   align-items: center;
+  padding: 0.5em 0;
+  border-radius: 10px;
+  transition: background-color 50ms;
+}
+aside ul li:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+aside ul li:hover svg {
+  fill: white;
 }
 aside ul li > .nav-icon {
   flex: 1;
@@ -74,7 +92,6 @@ aside nav {
 aside ul {
   display: flex;
   flex-direction: column;
-  gap: 1em;
 }
 
 main {
