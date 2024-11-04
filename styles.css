@@ -318,6 +318,9 @@ main .trending-list .trending-item .profile-pic svg {
   border-radius: 50%;
 }
 main .trending-list .trending-item .details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
   font-size: 1.2rem;
 }
 main .trending-list .trending-item .details .project {
