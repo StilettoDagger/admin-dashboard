@@ -18,6 +18,7 @@ html, body {
 body {
   display: grid;
   grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas: "sidebar header" "sidebar main";
   background-color: #c8c8c8;
   margin: 0;
@@ -25,8 +26,134 @@ body {
 }
 
 header {
+  padding: 1em 3em;
   grid-area: header;
   background-color: #f8f8f8;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  font-size: 1.5rem;
+  --icon-size: calc(1.5rem + 0.2em);
+  row-gap: 2em;
+}
+header .search {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto minmax(150px, 1fr);
+  align-items: center;
+  gap: 1em;
+}
+header .search .search-icon {
+  fill: #444;
+  cursor: pointer;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+header .search .search-icon:hover {
+  fill: #000;
+}
+header .search input[type=search] {
+  font: inherit;
+  padding: 0.2em 1em;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  outline: none;
+  border: 2px solid black;
+}
+header .search input[type=search]:focus {
+  background-color: #e1e1e1;
+  box-shadow: 2px 2px 5px gray;
+}
+header .search input[type=search]:hover {
+  background-color: #e1e1e1;
+}
+header .profile {
+  display: flex;
+  font-weight: bold;
+  justify-content: end;
+  align-items: center;
+  gap: 1em;
+}
+header .profile .notifications {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  fill: #444;
+  cursor: pointer;
+}
+header .profile .notifications:hover {
+  fill: #000;
+}
+header .profile-icon {
+  width: calc(0.5em + var(--icon-size));
+  height: calc(0.5em + var(--icon-size));
+}
+header .profile-icon img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+header .profile-icon img:hover {
+  cursor: pointer;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
+}
+header .welcome {
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+header .welcome .profile-icon {
+  width: calc(2.5em + var(--icon-size));
+  height: calc(2.5em + var(--icon-size));
+}
+header .welcome .greetings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-weight: bold;
+}
+header .welcome .greetings p:first-child {
+  font-size: 1rem;
+}
+header .welcome .greetings p:last-child {
+  font-size: 1.8rem;
+}
+header .user-actions {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1em;
+}
+header .user-actions button.action {
+  display: flex;
+  gap: 0.4em;
+  align-items: center;
+  background-color: #149fd6;
+  color: #f4f4f4;
+  padding: 0.5em 0.6em;
+  font: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  transition: background-color 50ms, color 50ms;
+}
+header .user-actions button.action:active {
+  transform: scale(0.98);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+header .user-actions button.action svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  fill: #f4f4ff;
+}
+header .user-actions button.action:hover {
+  background-color: rgb(15.641025641, 124.3461538462, 167.358974359);
+  color: white;
+}
+header .user-actions button.action:hover svg {
+  fill: white;
 }
 
 aside {
@@ -67,7 +194,7 @@ aside ul li {
   align-items: center;
   padding: 0.5em 0;
   border-radius: 10px;
-  transition: background-color 50ms;
+  transition: all 50ms;
 }
 aside ul li:hover {
   cursor: pointer;
