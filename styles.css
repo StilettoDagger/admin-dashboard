@@ -15,12 +15,16 @@ html, body {
   height: 100%;
 }
 
+html {
+  font-size: 14px;
+}
+
 body {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas: "sidebar header" "sidebar main";
-  background-color: #c8c8c8;
+  background-color: #edf0f3;
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -222,5 +226,76 @@ aside ul {
 }
 
 main {
+  line-height: 1.3;
+  padding: 2em;
   grid-area: main;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1em;
+  grid-template-areas: "projects announcements" "projects trending";
+}
+main .projects {
+  grid-area: projects;
+}
+main .projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1em;
+}
+main .projects-container .project-item {
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 10px;
+  border-left: 0.6em solid #e2c524;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "description-header description-header" "description-body description-body" ". actions";
+}
+main .projects-container .project-title {
+  grid-area: description-header;
+  font-size: 1.5rem;
+}
+main .projects-container .project-description {
+  grid-area: description-body;
+  font-size: 1.2rem;
+  color: #515151;
+}
+main .projects-container .project-actions {
+  grid-area: actions;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1em;
+}
+main .projects-container .project-actions .action-icon {
+  fill: #515151;
+  width: 2rem;
+  height: 2rem;
+  fill: #444;
+  cursor: pointer;
+}
+main .projects-container .project-actions .action-icon:hover {
+  fill: #000;
+}
+main section .title {
+  margin-bottom: 1em;
+}
+main .announcements {
+  grid-area: announcements;
+}
+main .announcements-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2em;
+}
+main .announcements-list li.announcement-item {
+  padding: 1em 0;
+}
+main .announcements-list li.announcement-item + li.announcement-item {
+  border-top: 1px solid #bbb;
+}
+main .announcements-list .announcement-title {
+  margin-bottom: 0.4em;
 }
