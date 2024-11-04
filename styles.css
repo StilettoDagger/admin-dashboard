@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 ul {
   list-style: none;
 }
@@ -28,6 +33,46 @@ aside {
   grid-area: sidebar;
   background-color: rgb(21, 181, 245);
   color: white;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+aside .title {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 0.7em;
+  align-items: center;
+}
+aside .title svg {
+  width: 2.5em;
+  height: 2.5em;
+  flex: 1;
+}
+aside .title .title-text {
+  flex: 4;
+}
+aside ul li {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  gap: 1em;
+}
+aside ul li > .nav-icon {
+  flex: 1;
+}
+aside ul li > .nav-text {
+  flex: 4;
+}
+aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+aside ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 main {
